@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="cont">
+            <div class="leftSide">
+                <div class="header">
+                    <h3>Student Data List</h3>
+                </div>
+                <div class="dataForm">
+                    <form #form="ngForm">
+                     <div class="formDiv">
+                        <div class="div">
+                        <label>Name</label>
+                        <input type="text" name="studentName" ngModel required #studentName="ngModel" placeholder="Please Enter Your Name">
+                        </div>
+                        <div class="inpDiv" *ngIf="!form.valid && form.value.studentName=='' && submit">
+                          Please Enter Your Name
+                        </div>
+                        <div class="div">
+                            <label>Surname</label>
+                            <input type="text" placeholder="Please Enter Your Surname" name="studentSurname" ngModel required #studentSurname="ngModel" >
+                        </div>
+                        <div class="inpDiv" *ngIf="!form.valid && form.value.studentSurname=='' && submit">
+                          Please Enter Your Surname
+                        </div>
+                         <div class="div" >
+                            <label>Age</label>
+                            <input type="number" name="studentAge" ngModel required #studentAge="ngModel" placeholder="Please Enter Your Age">
+                          </div>
+                          <div class="inpDiv"  *ngIf="!form.valid && (form.value.studentAge==null || form.value.studentAge=='') && submit">
+                            Please Enter Your Age
+                          </div>
+                          <div class="div">
+                            <label>University Name</label>
+                            <input type="text" name="studentUni" ngModel required #studentUni="ngModel" placeholder="Please Enter Your Name">
+                          </div>
+                          <div class="inpDiv" *ngIf="!form.valid && form.value.studentUni=='' && submit">
+                            Please Enter Your University Name
+                          </div>
+                          <div class="div">
+                            <label>Group Number</label>
+                            <input type="number" name="studentGN" ngModel required #studentGN="ngModel" placeholder="Please Enter Your Group Number">
+                          </div>
+                          <div class="inpDiv" *ngIf="!form.valid && (form.value.studentGN==null || form.value.studentGN=='') && submit">
+                            Please Enter Your Group Number
+                          </div>
+                          <div class="div">
+                            <label>Email</label>
+                            <input type="email" pattern=".+@gmail\.com" name="studentEmail" ngModel required #studentEmail="ngModel" placeholder="Please Enter Your Email">
+                          </div>
+                          <div class="inpDiv" *ngIf="!form.valid && (form.value.studentEmail==null || form.value.studentEmail=='') && submit">
+                            Please Enter Your Email Address
+                          </div>
+                          <div class="div">
+                            <div class="phonedes">
+                               <label>Phone</label>
+                               <select  name="part1" class="phonepart" ngModel required #part1="ngModel">
+                                <option >050</option>
+                                <option >051</option>
+                                <option >055</option>
+                                <option >070</option>
+                                <option >077</option>
+                              </select>
+                            <input type="number" class="phoneInp" name="studentPhone" ngModel required #studentPhone="ngModel" placeholder="Please Enter Phone Number">
+                          </div></div>
+                          <div class="inpDiv" *ngIf="!form.valid && (form.value.studentPhone==null ||  form.value.studentPhone=='') && submit">
+                            Please Enter Your Phone Number
+                          </div>
+                            
+                           
+                          <div>
+                            <button type="submit" class="btn" (click)="addClick(form)" [ngStyle]="{'background-color': useList.length>8 ?'red':'rgb(230, 255, 191)'}" [disabled]="useList.length>10" >Register</button>
+                          </div>
+                        </div>
+                        
+                          
+                        
+                    </form>
+                </div>
+            </div>
+           
+            </div>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="dataTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Age</th>
+                        <th>University Name</th>
+                        <th>Group Number</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let stddata of studentList">
+                        <td>{{stddata.stdName}}</td>
+                        <td>{{stddata.stdSurname}}</td>
+                        <td>{{stddata.stdAge}}</td>
+                        <td>{{stddata.stdUni}}</td>
+                        <td>{{stddata.stdGroup}}</td>
+                        <td>{{stddata.stdEmail}}</td>
+                        <td>{{stddata.stdPhone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
